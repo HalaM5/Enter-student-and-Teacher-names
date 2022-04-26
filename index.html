@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+    :root{
+        --h2-color:blueviolet;
+        --h2-font:cursive ,monospace;
+        --test-backcolor: pink;
+        --ol-font:italic bold  18px  cursive,"Times New Roman";
+        --body-back-color:aqua
+
+    }
+
+    body{
+        background-color: var(--body-back-color) ;
+    }
+    .div1{
+        display : flex;
+        justify-content: center;
+        color:brown;
+        font-family: cursive , 'Courier New', Courier, monospace ;
+        margin-bottom: 5%;
+
+
+    }
+    h1{
+        text-shadow: 1px 4px 1px rgb(103 13 13);
+        font-size: 94px;
+    }
+
+    .Ts{   /* two div of both teacher and student separatly*/
+        border: 2px solid green;
+        display:flex;
+        flex-direction: column;
+        background-color: var(--test-backcolor);
+        border-radius: 25px;
+        width : 25%;        /* div occupy 25% of page*/
+       ;/* word-break: break-all  /* to overcome text out of  box or div*/
+        border-style:dotted;
+
+    }
+    .members{ /* container of 2 div */
+        display: flex;
+
+        justify-content: space-around;
+
+    }
+
+
+    h2{
+        color:var(--h2-color);
+        font-family:var( --h2-font);
+         overflow-wrap: break-word; /*overcome words out of box*/
+         text-shadow: 1px 1px 1px rgb(138 43 226)
+
+    }
+
+    ol{
+    font: var(--ol-font);
+     /* word-break:break-all*/ /*overcome out of box*/
+      overflow-wrap: break-word; /*overcome out of box*/
+      position:relative; bottom: 30px; /*adjust position of ol to div then set bottom 30px to go up near title*/
+
+      text-shadow: 2px 2px 3px rgb(59, 57, 57);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+</head>
+
+<body>
+<div class="div1">
+        <h1>School members</h1>
+ </div>
+
+<div class="members">
+    <div class="Ts">
+        <h2>Name of Teacher:</h2>
+        <ol id="list-t">
+
+        </ol>
+    </div>
+    <div class="Ts">
+        <h2> Name of Students:</h2>
+        <ol id="list-s">
+
+        </ol>
+    </div>
+</div>
+
+<script>
+    // var teacher =
+var schoolMemb = ["T.Ahmad","Zin" ,"Yassin","Mahmoud","T.Karim" ,"Yousif","T.sara","marry","pro.Na","Rody","T.maria"]
+console.log(schoolMemb)
+for(var index= 0;index<schoolMemb.length;index++){
+//document.getElementById("list").innerHTML +="<li>"+schoolMemb[index] //to show aray in listi 2 3
+if (schoolMemb[index].includes("T.") || schoolMemb[index].includes("pro")){
+    document.getElementById("list-t").innerHTML +="<li>"+schoolMemb[index] //type only member contain on T.
+console.log(schoolMemb)}
+else {
+    document.getElementById("list-s").innerHTML +="<li>"+schoolMemb[index] // show only name without T.
+
+
+}
+}
+    //
+//document.getElementById("list").innerHTML=schoolMemb
+
+
+</script>
+
+</body>
+</html>
